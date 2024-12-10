@@ -1,0 +1,170 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Administrator\\source\\repos\\Memory_Game\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|c:\\users\\administrator\\source\\repos\\memory_game\\memory_game\\login.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|solutionrelative:memory_game\\login.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|c:\\users\\administrator\\source\\repos\\memory_game\\memory_game\\mainmenuform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|solutionrelative:memory_game\\mainmenuform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|c:\\users\\administrator\\source\\repos\\memory_game\\memory_game\\playcontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|solutionrelative:memory_game\\playcontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|c:\\users\\administrator\\source\\repos\\memory_game\\memory_game\\scorecontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|solutionrelative:memory_game\\scorecontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|c:\\users\\administrator\\source\\repos\\memory_game\\memory_game\\settingscontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|solutionrelative:memory_game\\settingscontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|c:\\users\\administrator\\source\\repos\\memory_game\\memory_game\\scorecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|solutionrelative:memory_game\\scorecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|C:\\Users\\Administrator\\source\\repos\\Memory_Game\\memory_game\\scorecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|solutionrelative:memory_game\\scorecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Administrator\\AppData\\Local\\MemoryGame\\scores.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|c:\\users\\administrator\\source\\repos\\memory_game\\memory_game\\settingscontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|solutionrelative:memory_game\\settingscontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ScoreControl.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Memory_Game\\Memory_Game\\ScoreControl.cs",
+              "RelativeDocumentMoniker": "Memory_Game\\ScoreControl.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Memory_Game\\Memory_Game\\ScoreControl.cs",
+              "RelativeToolTip": "Memory_Game\\ScoreControl.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T15:01:40.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainMenuForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Memory_Game\\Memory_Game\\MainMenuForm.Designer.cs",
+              "RelativeDocumentMoniker": "Memory_Game\\MainMenuForm.Designer.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Memory_Game\\Memory_Game\\MainMenuForm.Designer.cs",
+              "RelativeToolTip": "Memory_Game\\MainMenuForm.Designer.cs",
+              "ViewState": "AgIAAC4AAAAAdGZmZuYRwEMAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T14:58:06.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Memory_Game\\Memory_Game\\Login.Designer.cs",
+              "RelativeDocumentMoniker": "Memory_Game\\Login.Designer.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Memory_Game\\Memory_Game\\Login.Designer.cs",
+              "RelativeToolTip": "Memory_Game\\Login.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAK4AAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T14:57:58.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ScoreControl.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Memory_Game\\Memory_Game\\ScoreControl.Designer.cs",
+              "RelativeDocumentMoniker": "Memory_Game\\ScoreControl.Designer.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Memory_Game\\Memory_Game\\ScoreControl.Designer.cs",
+              "RelativeToolTip": "Memory_Game\\ScoreControl.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T14:55:54.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PlayControl.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Memory_Game\\Memory_Game\\PlayControl.Designer.cs",
+              "RelativeDocumentMoniker": "Memory_Game\\PlayControl.Designer.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Memory_Game\\Memory_Game\\PlayControl.Designer.cs",
+              "RelativeToolTip": "Memory_Game\\PlayControl.Designer.cs",
+              "ViewState": "AgIAAFsBAAAAAAAAAAAkwBoCAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T20:29:48.437Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SettingsControl.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Memory_Game\\Memory_Game\\SettingsControl.Designer.cs",
+              "RelativeDocumentMoniker": "Memory_Game\\SettingsControl.Designer.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Memory_Game\\Memory_Game\\SettingsControl.Designer.cs",
+              "RelativeToolTip": "Memory_Game\\SettingsControl.Designer.cs",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAwwMEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T21:17:33.606Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ScoreControl.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Memory_Game\\Memory_Game\\ScoreControl.cs",
+              "RelativeDocumentMoniker": "Memory_Game\\ScoreControl.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Memory_Game\\Memory_Game\\ScoreControl.cs [Design]",
+              "RelativeToolTip": "Memory_Game\\ScoreControl.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T21:05:22.436Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "scores.json",
+              "DocumentMoniker": "C:\\Users\\Administrator\\AppData\\Local\\MemoryGame\\scores.json",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\MemoryGame\\scores.json",
+              "ToolTip": "C:\\Users\\Administrator\\AppData\\Local\\MemoryGame\\scores.json",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\MemoryGame\\scores.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-06T21:13:10.744Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SettingsControl.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Memory_Game\\Memory_Game\\SettingsControl.cs",
+              "RelativeDocumentMoniker": "Memory_Game\\SettingsControl.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Memory_Game\\Memory_Game\\SettingsControl.cs",
+              "RelativeToolTip": "Memory_Game\\SettingsControl.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T21:49:19.576Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
