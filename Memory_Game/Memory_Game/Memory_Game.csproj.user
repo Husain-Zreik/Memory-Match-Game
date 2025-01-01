@@ -16,6 +16,9 @@
     <Compile Update="Views\SettingsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Views\Signup.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Views\Login.resx">

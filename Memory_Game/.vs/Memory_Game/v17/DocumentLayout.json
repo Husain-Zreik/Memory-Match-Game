@@ -1,12 +1,208 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Administrator\\source\\repos\\Memory-Match-Game\\Memory_Game\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|c:\\users\\administrator\\source\\repos\\memory-match-game\\memory_game\\memory_game\\views\\login.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|solutionrelative:memory_game\\views\\login.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|c:\\users\\administrator\\source\\repos\\memory-match-game\\memory_game\\memory_game\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|solutionrelative:memory_game\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|c:\\users\\administrator\\source\\repos\\memory-match-game\\memory_game\\memory_game\\views\\signup.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|solutionrelative:memory_game\\views\\signup.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|c:\\users\\administrator\\source\\repos\\memory-match-game\\memory_game\\memory_game\\database\\scripts\\createdatabase.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|solutionrelative:memory_game\\database\\scripts\\createdatabase.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|c:\\users\\administrator\\source\\repos\\memory-match-game\\memory_game\\memory_game\\database\\databaseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|solutionrelative:memory_game\\database\\databaseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|c:\\users\\administrator\\source\\repos\\memory-match-game\\memory_game\\memory_game\\.env||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|solutionrelative:memory_game\\.env||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|c:\\users\\administrator\\source\\repos\\memory-match-game\\memory_game\\memory_game\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|solutionrelative:memory_game\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|c:\\users\\administrator\\source\\repos\\memory-match-game\\memory_game\\memory_game\\views\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|solutionrelative:memory_game\\views\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|c:\\users\\administrator\\source\\repos\\memory-match-game\\memory_game\\memory_game\\views\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|solutionrelative:memory_game\\views\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|c:\\users\\administrator\\source\\repos\\memory-match-game\\memory_game\\memory_game\\views\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|solutionrelative:memory_game\\views\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|c:\\users\\administrator\\source\\repos\\memory-match-game\\memory_game\\memory_game\\views\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|solutionrelative:memory_game\\views\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|c:\\users\\administrator\\source\\repos\\memory-match-game\\memory_game\\memory_game\\database\\scripts\\createdatabase.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
+      "RelativeMoniker": "D:0:0:{4719B599-DD81-43CA-B1D4-549BB19BF028}|Memory_Game\\Memory_Game.csproj|solutionrelative:memory_game\\database\\scripts\\createdatabase.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CreateDatabase.sql ",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Memory-Match-Game\\Memory_Game\\Memory_Game\\Database\\Scripts\\CreateDatabase.sql",
+              "RelativeDocumentMoniker": "Memory_Game\\Database\\Scripts\\CreateDatabase.sql",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Memory-Match-Game\\Memory_Game\\Memory_Game\\Database\\Scripts\\CreateDatabase.sql",
+              "RelativeToolTip": "Memory_Game\\Database\\Scripts\\CreateDatabase.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-01-01T18:29:55.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Memory-Match-Game\\Memory_Game\\Memory_Game\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Memory_Game\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Memory-Match-Game\\Memory_Game\\Memory_Game\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Memory_Game\\Controllers\\UserController.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAQwFoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T18:29:23.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Signup.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Memory-Match-Game\\Memory_Game\\Memory_Game\\Views\\Signup.Designer.cs",
+              "RelativeDocumentMoniker": "Memory_Game\\Views\\Signup.Designer.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Memory-Match-Game\\Memory_Game\\Memory_Game\\Views\\Signup.Designer.cs",
+              "RelativeToolTip": "Memory_Game\\Views\\Signup.Designer.cs",
+              "ViewState": "AgIAALYAAAAAAAAAAAAQwNwAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T18:19:55.108Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Signup.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Memory-Match-Game\\Memory_Game\\Memory_Game\\Views\\Signup.cs",
+              "RelativeDocumentMoniker": "Memory_Game\\Views\\Signup.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Memory-Match-Game\\Memory_Game\\Memory_Game\\Views\\Signup.cs [Design]",
+              "RelativeToolTip": "Memory_Game\\Views\\Signup.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T18:19:39.933Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Memory-Match-Game\\Memory_Game\\Memory_Game\\Views\\Login.Designer.cs",
+              "RelativeDocumentMoniker": "Memory_Game\\Views\\Login.Designer.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Memory-Match-Game\\Memory_Game\\Memory_Game\\Views\\Login.Designer.cs",
+              "RelativeToolTip": "Memory_Game\\Views\\Login.Designer.cs",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAlwJcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T18:16:46.589Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DatabaseConnection.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Memory-Match-Game\\Memory_Game\\Memory_Game\\Database\\DatabaseConnection.cs",
+              "RelativeDocumentMoniker": "Memory_Game\\Database\\DatabaseConnection.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Memory-Match-Game\\Memory_Game\\Memory_Game\\Database\\DatabaseConnection.cs",
+              "RelativeToolTip": "Memory_Game\\Database\\DatabaseConnection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T18:30:04.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": ".env",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Memory-Match-Game\\Memory_Game\\Memory_Game\\.env",
+              "RelativeDocumentMoniker": "Memory_Game\\.env",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Memory-Match-Game\\Memory_Game\\Memory_Game\\.env",
+              "RelativeToolTip": "Memory_Game\\.env",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-01T17:44:45.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Signup.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Memory-Match-Game\\Memory_Game\\Memory_Game\\Views\\Signup.cs",
+              "RelativeDocumentMoniker": "Memory_Game\\Views\\Signup.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Memory-Match-Game\\Memory_Game\\Memory_Game\\Views\\Signup.cs",
+              "RelativeToolTip": "Memory_Game\\Views\\Signup.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T18:40:16.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Memory-Match-Game\\Memory_Game\\Memory_Game\\Views\\Login.cs",
+              "RelativeDocumentMoniker": "Memory_Game\\Views\\Login.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Memory-Match-Game\\Memory_Game\\Memory_Game\\Views\\Login.cs",
+              "RelativeToolTip": "Memory_Game\\Views\\Login.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBAAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T18:48:50.396Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Memory-Match-Game\\Memory_Game\\Memory_Game\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Memory_Game\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Memory-Match-Game\\Memory_Game\\Memory_Game\\Models\\User.cs",
+              "RelativeToolTip": "Memory_Game\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T20:11:17.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Login.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Memory-Match-Game\\Memory_Game\\Memory_Game\\Views\\Login.cs",
+              "RelativeDocumentMoniker": "Memory_Game\\Views\\Login.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Memory-Match-Game\\Memory_Game\\Memory_Game\\Views\\Login.cs [Design]",
+              "RelativeToolTip": "Memory_Game\\Views\\Login.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T18:16:29.254Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -1,52 +1,94 @@
-﻿using Memory_Game.Models;
+﻿using System.Text;
 using Memory_Game.Database;
+using Memory_Game.Models;
 using Microsoft.Data.SqlClient;
+using System.Security.Cryptography;
 
 namespace Memory_Game.Controllers
 {
     public class UserController
     {
-        public static bool AddUser(string username, string password)
+        public static bool AddUser(string username, string password, int age)
         {
+            string hashedPassword = HashPassword(password);
+
             using (var connection = DatabaseConnection.GetConnection())
             {
-                string query = "INSERT INTO Users (Username, Password) VALUES (@Username, @Password)";
+                string query = "INSERT INTO Users (Username, Password, Age, CreatedAt) VALUES (@Username, @Password, @Age, @CreatedAt)";
                 using (var command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Username", username);
-                    command.Parameters.AddWithValue("@Password", password);
+                    command.Parameters.AddWithValue("@Password", hashedPassword);
+                    command.Parameters.AddWithValue("@Age", age);
+                    command.Parameters.AddWithValue("@CreatedAt", DateTime.Now);
                     connection.Open();
                     return command.ExecuteNonQuery() > 0;
                 }
             }
         }
 
-        public static User GetUser(string username, string password)
+        private static string HashPassword(string password)
+        {
+            using (var sha256 = SHA256.Create())
+            {
+                byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
+                byte[] hashBytes = sha256.ComputeHash(passwordBytes);
+                return Convert.ToBase64String(hashBytes);
+            }
+        }
+
+        public static bool IsUsernameTaken(string username)
         {
             using (var connection = DatabaseConnection.GetConnection())
             {
-                string query = "SELECT * FROM Users WHERE Username = @Username AND Password = @Password";
+                string query = "SELECT COUNT(*) FROM Users WHERE Username = @Username";
                 using (var command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Username", username);
-                    command.Parameters.AddWithValue("@Password", password);
+                    connection.Open();
+                    return (int)command.ExecuteScalar() > 0;
+                }
+            }
+        }
+
+        public static User? GetUser(string username, string password)
+        {
+            using (var connection = DatabaseConnection.GetConnection())
+            {
+                string query = "SELECT * FROM Users WHERE Username = @Username";
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Username", username);
                     connection.Open();
                     using (var reader = command.ExecuteReader())
                     {
                         if (reader.Read())
                         {
-                            return new User
+                            var storedHashedPassword = reader["Password"].ToString();
+
+                            if (HashPassword(password) == storedHashedPassword)
                             {
-                                Id = (int)reader["Id"],
-                                Username = reader["Username"].ToString(),
-                                Password = reader["Password"].ToString(),
-                                CreatedAt = (DateTime)reader["CreatedAt"]
-                            };
+                                return new User
+                                {
+                                    Id = (int)reader["Id"],
+                                    Username = reader["Username"].ToString(),
+                                    Password = storedHashedPassword,
+                                    CreatedAt = (DateTime)reader["CreatedAt"],
+                                    Age = (int)reader["Age"]
+                                };
+                            }
                         }
                         return null;
                     }
                 }
             }
+        }
+
+        // The ValidateLogin method
+        public static bool ValidateLogin(string username, string password)
+        {
+            User? user = GetUser(username, password);
+            return user != null;
         }
     }
 }

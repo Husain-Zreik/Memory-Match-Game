@@ -4,10 +4,11 @@ USE MemoryGameDB;
 
 -- Users Table
 CREATE TABLE Users (
-    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Id INT PRIMARY KEY IDENTITY(1,1),
     Username NVARCHAR(50) NOT NULL UNIQUE,
-    Password NVARCHAR(50) NOT NULL,
-    CreatedAt DATETIME DEFAULT GETDATE()
+    Password NVARCHAR(255) NOT NULL,
+    Age INT NOT NULL,
+    CreatedAt DATETIME NOT NULL
 );
 
 -- Scores Table

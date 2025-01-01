@@ -11,9 +11,9 @@ namespace Memory_Game.Database
             string port = Environment.GetEnvironmentVariable("DATABASE_PORT") ?? "1433";
             string database = Environment.GetEnvironmentVariable("DATABASE_NAME") ?? "MemoryGameDB";
             string username = Environment.GetEnvironmentVariable("DATABASE_USER") ?? "sa";
-            string password = Environment.GetEnvironmentVariable("DATABASE_PASSWORD") ?? "";
+            string password = Environment.GetEnvironmentVariable("DATABASE_PASSWORD") ?? "root";
 
-            string connectionString = $"Server={host},{port};Database={database};User Id={username};Password={password};";
+            string connectionString = $"Server={host},{port};Database={database};User Id={username};Password={password};Encrypt=false;";
             return new SqlConnection(connectionString);
         }
     }
