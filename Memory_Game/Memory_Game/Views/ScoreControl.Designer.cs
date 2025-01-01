@@ -6,7 +6,7 @@ using System.IO;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 
-namespace Memory_Game
+namespace Memory_Game.Views
 {
     public partial class ScoreControl : UserControl
     {

@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.IO;
 
-namespace Memory_Game
+namespace Memory_Game.Views
 {
     public partial class PlayControl : UserControl
     {

@@ -1,24 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="Login.cs">
+    <Compile Update="Views\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="MainMenuForm.cs">
+    <Compile Update="Views\MainMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="PlayControl.cs">
+    <Compile Update="Views\PlayControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="ScoreControl.cs">
+    <Compile Update="Views\ScoreControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="SettingsControl.cs">
+    <Compile Update="Views\SettingsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Update="Login.resx">
+    <EmbeddedResource Update="Views\Login.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

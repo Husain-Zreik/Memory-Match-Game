@@ -1,4 +1,4 @@
-﻿namespace Memory_Game
+﻿namespace Memory_Game.Views
 {
     public partial class MainMenuForm : Form
     {
@@ -13,7 +13,7 @@
 
         private void MainMenuForm_Load(object sender, EventArgs e)
         {
-            LoadContentArea(new PlayControl());
+            LoadContentArea(new PlayControl(playerName));
         }
 
         private void DisplayWelcomeMessage()

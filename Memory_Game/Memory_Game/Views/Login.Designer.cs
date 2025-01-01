@@ -1,6 +1,6 @@
 ﻿using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace Memory_Game
+namespace Memory_Game.Views
 {
     partial class Login
     {

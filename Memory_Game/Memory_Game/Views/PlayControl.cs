@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Memory_Game
+namespace Memory_Game.Views
 {
-    public partial class MainMenuForm : Form
+    public partial class PlayControl : UserControl
     {
-        public MainMenuForm()
+        public PlayControl()
         {
             InitializeComponent();
         }

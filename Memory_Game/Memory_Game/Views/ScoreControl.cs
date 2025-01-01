@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Memory_Game
+namespace Memory_Game.Views
 {
-    public partial class SettingsControl : UserControl
+    public partial class ScoreControl : UserControl
     {
-        public SettingsControl()
+        public ScoreControl()
         {
             InitializeComponent();
         }

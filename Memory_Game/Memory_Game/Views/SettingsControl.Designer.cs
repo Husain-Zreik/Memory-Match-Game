@@ -4,7 +4,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Drawing;
 
-namespace Memory_Game
+namespace Memory_Game.Views
 {
     public partial class SettingsControl : UserControl
     {
@@ -12,7 +12,7 @@ namespace Memory_Game
 
         #region Designer generated code
 
-        private System.ComponentModel.IContainer components = null;
+        //private System.ComponentModel.IContainer components = null;
         private Label lblTitle;
         private ListBox lstSelectedImages;
         private Button btnSelectImages;
