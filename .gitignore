@@ -10,7 +10,7 @@ obj/
 *.ilk
 *.log
 .vscode/
-.vs
+.vs/
 
 # Environment variables
 .env
