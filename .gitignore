@@ -10,7 +10,10 @@ obj/
 *.ilk
 *.log
 .vscode/
-Memory_Game/.vs
+.vs/
+
+# Specific folder
+Memory_Game/.vs/
 
 # Environment variables
 .env
