@@ -10,7 +10,7 @@ obj/
 *.ilk
 *.log
 .vscode/
-Memory_Game/.vs/
+Memory_Game/.vs
 
 # Environment variables
 .env
