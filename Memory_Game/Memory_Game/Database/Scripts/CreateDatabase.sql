@@ -1,0 +1,45 @@
+﻿CREATE DATABASE MemoryGameDB;
+
+USE MemoryGameDB;
+
+-- Users Table
+CREATE TABLE Users (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Username NVARCHAR(50) NOT NULL UNIQUE,
+    Password NVARCHAR(50) NOT NULL,
+    CreatedAt DATETIME DEFAULT GETDATE()
+);
+
+-- Scores Table
+CREATE TABLE Scores (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    UserId INT NOT NULL FOREIGN KEY REFERENCES Users(Id),
+    Score INT NOT NULL,
+    Level INT NOT NULL,
+    AchievedAt DATETIME DEFAULT GETDATE()
+);
+
+-- Images Table
+CREATE TABLE Images (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    UserId INT NOT NULL FOREIGN KEY REFERENCES Users(Id),
+    ImagePath NVARCHAR(MAX) NOT NULL,
+    UploadedAt DATETIME DEFAULT GETDATE()
+);
+
+-- Settings Table
+CREATE TABLE Settings (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    UserId INT NOT NULL FOREIGN KEY REFERENCES Users(Id),
+    MaxLevels INT NOT NULL,
+    TimeLimitSeconds INT NOT NULL,
+    Difficulty NVARCHAR(20) NOT NULL
+);
+
+-- Rate Table
+CREATE TABLE Rate (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    UserId INT NOT NULL FOREIGN KEY REFERENCES Users(Id),
+    Rating INT NOT NULL CHECK (Rating BETWEEN 1 AND 5),
+    RatedAt DATETIME DEFAULT GETDATE()
+);
