@@ -2,10 +2,7 @@
 {
     public class Setting
     {
-        public int Id { get; set; }
-        public int UserId { get; set; }
-        public int MaxLevels { get; set; }
-        public int TimeLimitSeconds { get; set; }
-        public string Difficulty { get; set; }
+        public required string SettingName { get; set; }
+        public required string SettingValue { get; set; }
     }
 }

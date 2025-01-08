@@ -20,22 +20,13 @@ CREATE TABLE Scores (
     AchievedAt DATETIME DEFAULT GETDATE()
 );
 
--- Images Table
-CREATE TABLE Images (
-    Id INT IDENTITY(1,1) PRIMARY KEY,
-    UserId INT NOT NULL FOREIGN KEY REFERENCES Users(Id),
-    ImagePath NVARCHAR(MAX) NOT NULL,
-    UploadedAt DATETIME DEFAULT GETDATE()
-);
-
 -- Settings Table
 CREATE TABLE Settings (
-    Id INT IDENTITY(1,1) PRIMARY KEY,
-    UserId INT NOT NULL FOREIGN KEY REFERENCES Users(Id),
-    MaxLevels INT NOT NULL,
-    TimeLimitSeconds INT NOT NULL,
-    Difficulty NVARCHAR(20) NOT NULL
+    SettingID INT PRIMARY KEY IDENTITY(1,1),
+    SettingName NVARCHAR(100) NOT NULL,
+    SettingValue NVARCHAR(255) NOT NULL
 );
+
 
 -- Rate Table
 CREATE TABLE Rate (
@@ -44,3 +35,10 @@ CREATE TABLE Rate (
     Rating INT NOT NULL CHECK (Rating BETWEEN 1 AND 5),
     RatedAt DATETIME DEFAULT GETDATE()
 );
+
+USE MemoryGameDB; 
+
+-- Insert the settings into the Settings table
+INSERT INTO Settings (SettingName, SettingValue)
+VALUES ('MaxLevel', '3'),  
+       ('TimeBeforeReveal', '3000'); 

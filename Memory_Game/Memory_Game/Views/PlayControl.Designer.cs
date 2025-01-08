@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Linq;
-using System.Windows.Forms;
-using Newtonsoft.Json;
-using System.IO;
+using Memory_Game.Controllers;
 
 namespace Memory_Game.Views
 {
@@ -32,117 +29,38 @@ namespace Memory_Game.Views
 
         public void SaveScore(int score, int level)
         {
-            string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MemoryGame", "scores.json");
-
-            // Load the existing scores
-            Dictionary<string, PlayerScore> playerScores = LoadScores(filePath);
-
-            // Check if the player already exists and update their score
-            if (playerScores.ContainsKey(playerName))
-            {
-                // Update the existing player's score and level
-                playerScores[playerName].Score = score;
-                playerScores[playerName].Level = level;
-            }
-            else
-            {
-                // If the player does not exist, create a new record
-                PlayerScore playerScore = new PlayerScore
-                {
-                    PlayerName = playerName,
-                    Score = score,
-                    Level = level
-                };
-                playerScores.Add(playerName, playerScore);
-            }
-
-            // Save the updated scores back to the file
-            SaveScoresToFile(filePath, playerScores);
-        }
-
-        private Dictionary<string, PlayerScore> LoadScores(string filePath)
-        {
-            if (File.Exists(filePath))
-            {
-                try
-                {
-                    string json = File.ReadAllText(filePath);
-                    var playerScores = JsonConvert.DeserializeObject<Dictionary<string, PlayerScore>>(json) ?? new Dictionary<string, PlayerScore>();
-                    return playerScores;
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine($"Error loading scores: {ex.Message}");
-                    return new Dictionary<string, PlayerScore>(); // Return empty dictionary if there's an error
-                }
-            }
-            else
-            {
-                return new Dictionary<string, PlayerScore>(); // Return empty dictionary if file does not exist
-            }
-        }
-
-        private void SaveScoresToFile(string filePath, Dictionary<string, PlayerScore> playerScores)
-        {
             try
             {
-                // Ensure the directory exists
-                string directoryPath = Path.GetDirectoryName(filePath);
-                if (!Directory.Exists(directoryPath))
+                int userId = UserController.GetUserId(playerName);
+
+                if (userId == -1)
                 {
-                    Directory.CreateDirectory(directoryPath);
-                    Debug.WriteLine($"Created directory: {directoryPath}");
+                    Debug.WriteLine($"Player {playerName} not found in the database. Cannot save score.");
+                    return;
                 }
 
-                // Serialize the dictionary to JSON
-                string json = JsonConvert.SerializeObject(playerScores, Formatting.Indented);
+                bool isSaved = ScoreController.AddScore(userId, score, level);
 
-                // Write JSON to the file
-                File.WriteAllText(filePath, json);
-                Debug.WriteLine("Scores saved successfully!");
+                if (isSaved)
+                {
+                    Debug.WriteLine($"Score saved successfully for user {playerName} (ID: {userId}).");
+                }
+                else
+                {
+                    Debug.WriteLine($"Failed to save score for user {playerName} (ID: {userId}).");
+                }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"Error saving scores: {ex.Message}");
+                Debug.WriteLine($"Error saving score to the database: {ex.Message}");
             }
         }
-
-
 
         private void EndLevel(int finalScore)
         {
             int level = currentLevel;
-
             Debug.WriteLine($"Ending level {level} for player {playerName} with score {finalScore}");
-
-            // Call SaveScore after each level completion
-            SaveScore( finalScore, level);
-
-            // Continue with other level completion logic
-        }
-
-
-        public void SetCustomImages(string[] images)
-        {
-            customImages = images;
-        }
-
-        private bool AreCustomImagesAvailable()
-        {
-            string directoryPath = @"C:\Users\Administrator\source\repos\Memory-Match-Game\Memory_Game\Memory_Game\bin\Debug\net8.0-windows\Resources\CustomImages";
-            if (System.IO.Directory.Exists(directoryPath))
-            {
-                var imageFiles = System.IO.Directory.GetFiles(directoryPath, "*.png")
-                                    .Concat(System.IO.Directory.GetFiles(directoryPath, "*.jpg"))
-                                    .Concat(System.IO.Directory.GetFiles(directoryPath, "*.jpeg"))
-                                    .ToArray();
-                if (imageFiles.Length > 0)
-                {
-                    customImages = imageFiles;
-                    return true;
-                }
-            }
-            return false;
+            SaveScore(finalScore, level);
         }
 
         private void PlayControl_Load(object sender, EventArgs e)
@@ -154,11 +72,54 @@ namespace Memory_Game.Views
             btnStart.Enabled = true;
         }
 
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            StartNewLevel();
+            btnStart.Enabled = false;
+        }
+
+        private void btnRestart_Click(object sender, EventArgs e)
+        {
+            ResetGame();
+            btnStart.Enabled = true;
+        }
+
+        private void ResetGame()
+        {
+            if (gameTimer != null && gameTimer.Enabled)
+            {
+                gameTimer.Stop();
+            }
+
+            elapsedTime = 0;
+            currentLevel = 1;
+            mistakes = 0;
+            correctMatches = 0;
+            liveScore = 0;
+
+            lblScore.Text = "Mistakes: 0";
+            lblTimer.Text = "Time: 00:00";
+            lblLevel.Text = "Level: 1";
+            lblLiveScore.Text = "Score: 0";
+
+            if (cardButtons != null)
+            {
+                foreach (var button in cardButtons)
+                {
+                    this.Controls.Remove(button);
+                }
+            }
+
+            btnStart.Enabled = true;
+            Debug.WriteLine("Game reset. Waiting for the user to start a new game.");
+        }
+
         private void StartNewLevel()
         {
             mistakes = 0;
             correctMatches = 0;
             elapsedTime = 0;
+
             lblScore.Text = "Mistakes: 0";
             lblTimer.Text = "Time: 00:00";
             lblLevel.Text = "Level: " + currentLevel;
@@ -169,8 +130,9 @@ namespace Memory_Game.Views
                 1 => 3,
                 2 => 6,
                 3 => 9,
-                _ => 9 
+                _ => 9
             };
+
             totalCards = totalCardPairs * 2;
 
             if (cardButtons != null)
@@ -180,12 +142,14 @@ namespace Memory_Game.Views
                     this.Controls.Remove(button);
                 }
             }
+
             SetupLevel();
         }
 
         private void SetupLevel()
         {
             cardButtons = new Button[totalCards];
+
             for (int i = 0; i < totalCards; i++)
             {
                 cardButtons[i] = new Button
@@ -198,6 +162,7 @@ namespace Memory_Game.Views
                 cardButtons[i].Click += cardButton_Click;
                 this.Controls.Add(cardButtons[i]);
             }
+
             SetupCardValues();
             ShuffleCards();
             MemorizationPhase();
@@ -206,6 +171,7 @@ namespace Memory_Game.Views
         private void SetupCardValues()
         {
             cardValues = new string[totalCards];
+
             if (AreCustomImagesAvailable())
             {
                 int customImageCount = customImages.Length;
@@ -357,16 +323,15 @@ namespace Memory_Game.Views
             if (firstImage == secondImage)
             {
                 correctMatches++;
-                liveScore += 100; // Add 100 points for a correct match
+                liveScore += 100;
                 firstClicked = null;
                 secondClicked = null;
 
-                lblLiveScore.Text = "Score: " + liveScore; // Update live score
+                lblLiveScore.Text = "Score: " + liveScore;
 
                 if (correctMatches == totalCardPairs)
                 {
-                    // After completing the level, save the score
-                    SaveScore( liveScore, currentLevel);  // You can modify the player name dynamically
+                    SaveScore(liveScore, currentLevel);
                     MessageBox.Show("You've completed this level!", "Congratulations", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     if (currentLevel < 3)
@@ -376,14 +341,12 @@ namespace Memory_Game.Views
                     }
                     else
                     {
-                        MessageBox.Show("You've completed all levels!", "Congratulations", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        ResetGame(); // If all levels are completed, reset the game
+                        ResetGame();
                     }
                 }
             }
             else
             {
-                // Handle mistakes
                 var timer = new System.Windows.Forms.Timer { Interval = 1000 };
                 timer.Tick += (s, e) =>
                 {
@@ -404,47 +367,35 @@ namespace Memory_Game.Views
                 mistakes++;
                 lblScore.Text = $"Mistakes: {mistakes}";
 
-                // Deduct points for mistakes (optional)
                 liveScore -= 10;
-                if (liveScore < 0) liveScore = 0; // Ensure score doesn't go negative
-                lblLiveScore.Text = "Score: " + liveScore; // Update live score
+                if (liveScore < 0) liveScore = 0;
+                lblLiveScore.Text = "Score: " + liveScore;
             }
         }
 
-        private void ResetGame()
+        private bool AreCustomImagesAvailable()
         {
-            currentLevel = 1;
-            mistakes = 0;
-            correctMatches = 0;
-            elapsedTime = 0;
-
-            lblScore.Text = "Mistakes: 0";
-            lblTimer.Text = "Time: 00:00";
-            lblLevel.Text = "Level: 1";
-            lblLiveScore.Text = "Score: 0";
-
-            if (cardButtons != null)
+            string directoryPath = @"C:\Users\Administrator\source\repos\Memory-Match-Game\Memory_Game\Memory_Game\bin\Debug\net8.0-windows\Resources\CustomImages";
+            if (System.IO.Directory.Exists(directoryPath))
             {
-                foreach (var button in cardButtons)
+                var imageFiles = System.IO.Directory.GetFiles(directoryPath, "*.png")
+                                    .Concat(System.IO.Directory.GetFiles(directoryPath, "*.jpg"))
+                                    .Concat(System.IO.Directory.GetFiles(directoryPath, "*.jpeg"))
+                                    .ToArray();
+                if (imageFiles.Length > 0)
                 {
-                    this.Controls.Remove(button);
+                    customImages = imageFiles;
+                    return true;
                 }
             }
-
-            btnStart.Enabled = true;
+            return false;
         }
 
-        private void btnStart_Click(object sender, EventArgs e)
+        public void SetCustomImages(string[] images)
         {
-            StartNewLevel();
-            btnStart.Enabled = false;
+            customImages = images;
         }
 
-        private void btnRestart_Click(object sender, EventArgs e)
-        {
-            ResetGame();
-            btnStart.Enabled = true;
-        }
 
 
         #region Designer Code
@@ -460,37 +411,36 @@ namespace Memory_Game.Views
 
         private void InitializeComponent()
         {
+            // Form Settings
             this.BackColor = System.Drawing.Color.FromArgb(245, 244, 239);
-
-            this.BackgroundImage = global::Memory_Game.Resources.Background_Image
-           ; // Replace with your image name
+            this.BackgroundImage = global::Memory_Game.Resources.Background_Image; 
             this.BackgroundImageLayout = ImageLayout.Stretch;
 
-            // Panel for the statistics bar
+            // Statistics Panel
             var statsPanel = new Panel
             {
                 Location = new System.Drawing.Point(0, 0),
-                Size = new System.Drawing.Size(800, 50), // Adjust width and height as needed
-                BackColor = System.Drawing.Color.FromArgb(250, 250, 250) // Off-white background
+                Size = new System.Drawing.Size(800, 50),
+                BackColor = System.Drawing.Color.FromArgb(250, 250, 250)
             };
             this.Controls.Add(statsPanel);
 
             // Score Label
-            this.lblScore = new Label
+            lblScore = new Label
             {
                 Text = "Mistakes: 0",
-                Location = new System.Drawing.Point(20, 10), // Adjust X, Y position within the statsPanel
+                Location = new System.Drawing.Point(20, 10),
                 Size = new System.Drawing.Size(150, 30),
                 Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular),
                 ForeColor = System.Drawing.Color.Black
             };
-            statsPanel.Controls.Add(lblScore); // Add to the panel
+            statsPanel.Controls.Add(lblScore);
 
             // Timer Label
-            this.lblTimer = new Label
+            lblTimer = new Label
             {
                 Text = "Time: 00:00",
-                Location = new System.Drawing.Point(620, 10), // Position it to the right within the statsPanel
+                Location = new System.Drawing.Point(620, 10),
                 Size = new System.Drawing.Size(150, 30),
                 Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular),
                 ForeColor = System.Drawing.Color.Black
@@ -498,7 +448,7 @@ namespace Memory_Game.Views
             statsPanel.Controls.Add(lblTimer);
 
             // Level Label
-            this.lblLevel = new Label
+            lblLevel = new Label
             {
                 Text = "Level: 1",
                 Location = new System.Drawing.Point(220, 10),
@@ -509,7 +459,7 @@ namespace Memory_Game.Views
             statsPanel.Controls.Add(lblLevel);
 
             // Live Score Label
-            this.lblLiveScore = new Label
+            lblLiveScore = new Label
             {
                 Text = "Score: 0",
                 Location = new System.Drawing.Point(420, 10),
@@ -520,7 +470,7 @@ namespace Memory_Game.Views
             statsPanel.Controls.Add(lblLiveScore);
 
             // Start Button
-            this.btnStart = new Button
+            btnStart = new Button
             {
                 Text = "Start Game",
                 Size = new System.Drawing.Size(100, 40),
@@ -535,9 +485,9 @@ namespace Memory_Game.Views
             this.Controls.Add(btnStart);
 
             // Restart Button
-            this.btnRestart = new Button
+            btnRestart = new Button
             {
-                Text = "Restart",
+                Text = "Reset",
                 Size = new System.Drawing.Size(100, 40),
                 Location = new System.Drawing.Point(670, 500),
                 BackColor = System.Drawing.Color.FromArgb(45, 45, 48),
@@ -550,14 +500,13 @@ namespace Memory_Game.Views
             this.Controls.Add(btnRestart);
 
             // Game Timer
-            this.gameTimer = new System.Windows.Forms.Timer { Interval = 1000 };
-            this.gameTimer.Tick += gameTimer_Tick;
+            gameTimer = new System.Windows.Forms.Timer { Interval = 1000 };
+            gameTimer.Tick += gameTimer_Tick;
 
             this.Name = "PlayControl";
             this.Size = new System.Drawing.Size(800, 600);
             this.Load += PlayControl_Load;
         }
-
 
         #endregion
     }
