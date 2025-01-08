@@ -129,7 +129,7 @@ namespace Memory_Game.Views
 
         private bool AreCustomImagesAvailable()
         {
-            string directoryPath = @"C:\Users\Administrator\source\repos\Memory_Game\Memory_Game\bin\Debug\net8.0-windows\Resources\CustomImages";
+            string directoryPath = @"C:\Users\Administrator\source\repos\Memory-Match-Game\Memory_Game\Memory_Game\bin\Debug\net8.0-windows\Resources\CustomImages";
             if (System.IO.Directory.Exists(directoryPath))
             {
                 var imageFiles = System.IO.Directory.GetFiles(directoryPath, "*.png")
@@ -162,14 +162,14 @@ namespace Memory_Game.Views
             lblScore.Text = "Mistakes: 0";
             lblTimer.Text = "Time: 00:00";
             lblLevel.Text = "Level: " + currentLevel;
-            lblLiveScore.Text = "Score: " + liveScore; // Display live score
+            lblLiveScore.Text = "Score: " + liveScore;
 
             totalCardPairs = currentLevel switch
             {
                 1 => 3,
                 2 => 6,
                 3 => 9,
-                _ => 9 // Keep level 3 as the maximum
+                _ => 9 
             };
             totalCards = totalCardPairs * 2;
 

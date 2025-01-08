@@ -113,13 +113,22 @@ namespace Memory_Game {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Dinosaur_2 {
-            get {
+        //internal static System.Drawing.Bitmap Dinosaur_2 {
+        //    get {
+        //        object obj = ResourceManager.GetObject("Dinosaur_2", resourceCulture);
+        //        return ((System.Drawing.Bitmap)(obj));
+        //    }
+        //}
+        internal static System.Drawing.Bitmap Dinosaur_2
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("Dinosaur_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>

@@ -30,81 +30,62 @@ namespace Memory_Game.Views
             this.labelPassword = new System.Windows.Forms.Label();
             this.SuspendLayout();
 
+            // buttonSubmit
             this.buttonSubmit.BackColor = System.Drawing.Color.White;
             this.buttonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSubmit.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.buttonSubmit.ForeColor = System.Drawing.Color.Black;
-            this.buttonSubmit.Location = new System.Drawing.Point(150, 220);
-            this.buttonSubmit.Name = "buttonSubmit";
-            this.buttonSubmit.Size = new System.Drawing.Size(72, 26);
+            this.buttonSubmit.Size = new System.Drawing.Size(100, 30);
             this.buttonSubmit.TabIndex = 3;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.UseVisualStyleBackColor = false;
             this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
 
+            // labelPrompt
             this.labelPrompt.AutoSize = true;
             this.labelPrompt.BackColor = System.Drawing.Color.Transparent;
             this.labelPrompt.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.labelPrompt.ForeColor = System.Drawing.Color.White;
-            this.labelPrompt.Location = new System.Drawing.Point(100, 90);
-            this.labelPrompt.Name = "labelPrompt";
-            this.labelPrompt.Size = new System.Drawing.Size(144, 19);
-            this.labelPrompt.TabIndex = 2;
             this.labelPrompt.Text = "Username:";
 
+            // textBoxPlayerName
             this.textBoxPlayerName.BackColor = System.Drawing.Color.White;
             this.textBoxPlayerName.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.textBoxPlayerName.Location = new System.Drawing.Point(100, 110);
-            this.textBoxPlayerName.MaxLength = 15;
-            this.textBoxPlayerName.Name = "textBoxPlayerName";
             this.textBoxPlayerName.Size = new System.Drawing.Size(199, 27);
             this.textBoxPlayerName.TabIndex = 1;
-            this.textBoxPlayerName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 
+            // labelTitle
             this.labelTitle.AutoSize = true;
             this.labelTitle.BackColor = System.Drawing.Color.Transparent;
             this.labelTitle.Font = new System.Drawing.Font("Segoe Script", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(75, 20);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(222, 44);
-            this.labelTitle.TabIndex = 4;
             this.labelTitle.Text = "Welcome to Mind Game!";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
+            // textBoxPassword
             this.textBoxPassword.BackColor = System.Drawing.Color.White;
             this.textBoxPassword.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.textBoxPassword.Location = new System.Drawing.Point(100, 160);
-            this.textBoxPassword.MaxLength = 15;
-            this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(199, 27);
             this.textBoxPassword.TabIndex = 2;
-            this.textBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBoxPassword.UseSystemPasswordChar = true;
 
+            // labelPassword
             this.labelPassword.AutoSize = true;
             this.labelPassword.BackColor = System.Drawing.Color.Transparent;
             this.labelPassword.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.labelPassword.ForeColor = System.Drawing.Color.White;
-            this.labelPassword.Location = new System.Drawing.Point(100, 140);
-            this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(82, 19);
-            this.labelPassword.TabIndex = 6;
             this.labelPassword.Text = "Password:";
 
+            // linkLabelSignup
             this.linkLabelSignup.AutoSize = true;
             this.linkLabelSignup.BackColor = System.Drawing.Color.Transparent;
             this.linkLabelSignup.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Bold);
             this.linkLabelSignup.ForeColor = System.Drawing.Color.White;
             this.linkLabelSignup.LinkColor = System.Drawing.Color.Blue;
-            this.linkLabelSignup.Location = new System.Drawing.Point(100, 270);
-            this.linkLabelSignup.Name = "linkLabelSignup";
-            this.linkLabelSignup.Size = new System.Drawing.Size(180, 17);
-            this.linkLabelSignup.TabIndex = 5;
-            this.linkLabelSignup.TabStop = true;
             this.linkLabelSignup.Text = "Don't have an account? Signup";
             this.linkLabelSignup.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSignup_LinkClicked);
 
+            // Centering form elements
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImage = global::Memory_Game.Resources.Background_Image;
@@ -119,13 +100,44 @@ namespace Memory_Game.Views
             this.Controls.Add(this.textBoxPlayerName);
             this.Icon = null;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(416, 359);
             this.MinimumSize = new System.Drawing.Size(416, 359);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Memory Game Login";
+            this.Resize += new EventHandler(this.Login_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
+
+            CenterComponents();
+        }
+
+        private void Login_Resize(object sender, EventArgs e)
+        {
+            CenterComponents();
+        }
+
+        private void CenterComponents()
+        {
+            int formWidth = this.ClientSize.Width;
+            int formHeight = this.ClientSize.Height;
+
+            int containerWidth = Math.Max(labelPrompt.Width, textBoxPlayerName.Width);
+            int containerHeight = 20 + labelPrompt.Height + textBoxPlayerName.Height +
+                                  labelPassword.Height + textBoxPassword.Height + 80;
+
+            int centerX = (formWidth - containerWidth) / 2;
+            int centerY = (formHeight - containerHeight) / 2;
+
+            labelTitle.Location = new System.Drawing.Point((formWidth - labelTitle.Width) / 2, 30);
+
+            labelPrompt.Location = new System.Drawing.Point(centerX, centerY);
+            textBoxPlayerName.Location = new System.Drawing.Point(centerX, centerY + labelPrompt.Height + 5);
+
+            labelPassword.Location = new System.Drawing.Point(centerX, centerY + labelPrompt.Height + textBoxPlayerName.Height + 15);
+            textBoxPassword.Location = new System.Drawing.Point(centerX, centerY + labelPrompt.Height + textBoxPlayerName.Height + labelPassword.Height + 15);
+
+            buttonSubmit.Location = new System.Drawing.Point((formWidth - buttonSubmit.Width) / 2, centerY + containerHeight - 50);
+            linkLabelSignup.Location = new System.Drawing.Point((formWidth - linkLabelSignup.Width) / 2, centerY + containerHeight + 20);
         }
 
         #endregion

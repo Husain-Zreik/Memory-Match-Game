@@ -180,7 +180,7 @@ namespace Memory_Game.Views
             // Age Validation
             if (!int.TryParse(ageText, out age) || age < 4)
             {
-                MessageBox.Show("Please enter a valid age (18 or older).");
+                MessageBox.Show("Please enter a valid age (4 or older).");
                 return;
             }
 
