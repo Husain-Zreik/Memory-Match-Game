@@ -87,3 +87,10 @@ C:\Users\Administrator\source\repos\Memory-Match-Game\Memory_Game\Memory_Game\ob
 C:\Users\Administrator\source\repos\Memory-Match-Game\Memory_Game\Memory_Game\obj\Debug\net8.0-windows\Memory_Game.genruntimeconfig.cache
 C:\Users\Administrator\source\repos\Memory-Match-Game\Memory_Game\Memory_Game\bin\Debug\net8.0-windows\Memory_Game.pdb
 C:\Users\Administrator\source\repos\Memory-Match-Game\Memory_Game\Memory_Game\obj\Debug\net8.0-windows\ref\Memory_Game.dll
+C:\Users\Administrator\source\repos\Memory-Match-Game\Memory_Game\Memory_Game\obj\Debug\net8.0-windows\Memory_Game.Views.RatingForm.resources
+C:\Users\Administrator\source\repos\Memory-Match-Game\Memory_Game\Memory_Game\bin\Debug\net8.0-windows\Bunifu.Licensing.dll
+C:\Users\Administrator\source\repos\Memory-Match-Game\Memory_Game\Memory_Game\bin\Debug\net8.0-windows\Bunifu.UI.WinForms.dll
+C:\Users\Administrator\source\repos\Memory-Match-Game\Memory_Game\Memory_Game\bin\Debug\net8.0-windows\RestSharp.dll
+C:\Users\Administrator\source\repos\Memory-Match-Game\Memory_Game\Memory_Game\bin\Debug\net8.0-windows\System.Management.dll
+C:\Users\Administrator\source\repos\Memory-Match-Game\Memory_Game\Memory_Game\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Management.dll
+C:\Users\Administrator\source\repos\Memory-Match-Game\Memory_Game\Memory_Game\bin\Debug\net8.0-windows\FontAwesome.Sharp.dll

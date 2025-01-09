@@ -27,74 +27,57 @@ namespace Memory_Game.Views
             this.playerName = playerName;
         }
 
-        //public void SaveScore(int score, int level)
-        //{
-        //    string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MemoryGame", "scores.json");
+        private void EndLevel(int finalScore)
+        {
+            int level = currentLevel;
+            Debug.WriteLine($"Ending level {level} for player {playerName} with score {finalScore}");
+            SaveScore(finalScore, level);
+            PromptForRating();  
+            
+        }
 
-        //    Dictionary<string, PlayerScore> playerScores = LoadScores(filePath);
+        private void PromptForRating()
+        {
+            var ratingForm = new RatingForm(); 
+            ratingForm.ShowDialog();
 
-        //    if (playerScores.ContainsKey(playerName))
-        //    {
-        //        playerScores[playerName].Score = score;
-        //        playerScores[playerName].Level = level;
-        //    }
-        //    else
-        //    {
-        //        PlayerScore playerScore = new PlayerScore
-        //        {
-        //            PlayerName = playerName,
-        //            Score = score,
-        //            Level = level
-        //        };
-        //        playerScores.Add(playerName, playerScore);
-        //    }
+            int rating = ratingForm.SelectedRating; 
 
-        //    SaveScoresToFile(filePath, playerScores);
-        //}
+            if (rating > 0 && rating <= 5)
+            {
+                SaveRating(rating);  
+            }
+        }
 
-        //private Dictionary<string, PlayerScore> LoadScores(string filePath)
-        //{
-        //    if (File.Exists(filePath))
-        //    {
-        //        try
-        //        {
-        //            string json = File.ReadAllText(filePath);
-        //            var playerScores = JsonConvert.DeserializeObject<Dictionary<string, PlayerScore>>(json) ?? new Dictionary<string, PlayerScore>();
-        //            return playerScores;
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            Debug.WriteLine($"Error loading scores: {ex.Message}");
-        //            return new Dictionary<string, PlayerScore>(); 
-        //        }
-        //    }
-        //    else
-        //    {
-        //        return new Dictionary<string, PlayerScore>(); 
-        //    }
-        //}
+        private void SaveRating(int rating)
+        {
+            try
+            {
+                int userId = UserController.GetUserId(playerName);
 
-        //private void SaveScoresToFile(string filePath, Dictionary<string, PlayerScore> playerScores)
-        //{
-        //    try
-        //    {
-        //        string directoryPath = Path.GetDirectoryName(filePath);
-        //        if (!Directory.Exists(directoryPath))
-        //        {
-        //            Directory.CreateDirectory(directoryPath);
-        //            Debug.WriteLine($"Created directory: {directoryPath}");
-        //        }
+                if (userId == -1)
+                {
+                    Debug.WriteLine($"Player {playerName} not found in the database. Cannot save rating.");
+                    return;
+                }
 
-        //        string json = JsonConvert.SerializeObject(playerScores, Formatting.Indented);
+                bool isSaved = RateController.AddRate(userId, rating);
 
-        //        File.WriteAllText(filePath, json);
-        //        Debug.WriteLine("Scores saved successfully!");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Debug.WriteLine($"Error saving scores: {ex.Message}");
-        //    }
-        //}
+                if (isSaved)
+                {
+                    Debug.WriteLine($"Rating {rating} saved successfully for user {playerName} (ID: {userId}).");
+                }
+                else
+                {
+                    Debug.WriteLine($"Failed to save rating for user {playerName} (ID: {userId}).");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error saving rating to the database: {ex.Message}");
+            }
+        }
+
 
         public void SaveScore(int score, int level)
         {
@@ -124,14 +107,6 @@ namespace Memory_Game.Views
                 Debug.WriteLine($"Error saving score to the database: {ex.Message}");
             }
         }
-
-        private void EndLevel(int finalScore)
-        {
-            int level = currentLevel;
-            Debug.WriteLine($"Ending level {level} for player {playerName} with score {finalScore}");
-            SaveScore(finalScore, level);
-        }
-
         private void PlayControl_Load(object sender, EventArgs e)
         {
             lblScore.Text = "Mistakes: 0";
@@ -150,6 +125,7 @@ namespace Memory_Game.Views
         private void btnRestart_Click(object sender, EventArgs e)
         {
             ResetGame();
+            PromptForRating();
             btnStart.Enabled = true;
         }
 

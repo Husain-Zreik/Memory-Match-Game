@@ -50,9 +50,17 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "dependencies": {
+            "Bunifu.UI.WinForms": {
+              "target": "Package",
+              "version": "[7.2.0, )"
+            },
             "DotNetEnv": {
               "target": "Package",
               "version": "[3.1.1, )"
+            },
+            "FontAwesome.Sharp": {
+              "target": "Package",
+              "version": "[6.6.0, )"
             },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
