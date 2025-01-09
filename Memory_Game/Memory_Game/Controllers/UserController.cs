@@ -84,5 +84,18 @@ namespace Memory_Game.Controllers
             return result != null ? Convert.ToInt32(result) : -1;
         }
 
+        public static string? GetUsernameById(int userId)
+        {
+            using var connection = DatabaseConnection.GetConnection();
+            string query = "SELECT Username FROM Users WHERE Id = @UserId";
+            using var command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@UserId", userId);
+            connection.Open();
+
+            var result = command.ExecuteScalar();
+            return result != null ? result.ToString() : null;
+        }
+
+
     }
 }

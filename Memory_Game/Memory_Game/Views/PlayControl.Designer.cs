@@ -27,6 +27,75 @@ namespace Memory_Game.Views
             this.playerName = playerName;
         }
 
+        //public void SaveScore(int score, int level)
+        //{
+        //    string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MemoryGame", "scores.json");
+
+        //    Dictionary<string, PlayerScore> playerScores = LoadScores(filePath);
+
+        //    if (playerScores.ContainsKey(playerName))
+        //    {
+        //        playerScores[playerName].Score = score;
+        //        playerScores[playerName].Level = level;
+        //    }
+        //    else
+        //    {
+        //        PlayerScore playerScore = new PlayerScore
+        //        {
+        //            PlayerName = playerName,
+        //            Score = score,
+        //            Level = level
+        //        };
+        //        playerScores.Add(playerName, playerScore);
+        //    }
+
+        //    SaveScoresToFile(filePath, playerScores);
+        //}
+
+        //private Dictionary<string, PlayerScore> LoadScores(string filePath)
+        //{
+        //    if (File.Exists(filePath))
+        //    {
+        //        try
+        //        {
+        //            string json = File.ReadAllText(filePath);
+        //            var playerScores = JsonConvert.DeserializeObject<Dictionary<string, PlayerScore>>(json) ?? new Dictionary<string, PlayerScore>();
+        //            return playerScores;
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            Debug.WriteLine($"Error loading scores: {ex.Message}");
+        //            return new Dictionary<string, PlayerScore>(); 
+        //        }
+        //    }
+        //    else
+        //    {
+        //        return new Dictionary<string, PlayerScore>(); 
+        //    }
+        //}
+
+        //private void SaveScoresToFile(string filePath, Dictionary<string, PlayerScore> playerScores)
+        //{
+        //    try
+        //    {
+        //        string directoryPath = Path.GetDirectoryName(filePath);
+        //        if (!Directory.Exists(directoryPath))
+        //        {
+        //            Directory.CreateDirectory(directoryPath);
+        //            Debug.WriteLine($"Created directory: {directoryPath}");
+        //        }
+
+        //        string json = JsonConvert.SerializeObject(playerScores, Formatting.Indented);
+
+        //        File.WriteAllText(filePath, json);
+        //        Debug.WriteLine("Scores saved successfully!");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Debug.WriteLine($"Error saving scores: {ex.Message}");
+        //    }
+        //}
+
         public void SaveScore(int score, int level)
         {
             try
